@@ -6,6 +6,20 @@ don't want to cache your modules which you are testing. This forces you to write
 isolated tests, which is a good thing.
 
 ## usage
+### install
+
+We'll install and save flush-cache so we can use it locally for our tests:
+
+```
+npm i flush-cache --save-dev
+```
+
+or, if you use [yarn](https://yarnpkg.com/):
+
+```
+yarn add flush-cache --dev
+```
+
 ### common
 
 Require flush-cache and invoke the function to clear the whole cache.
@@ -15,7 +29,7 @@ something.js
 console.log('such logs, much wows!')
 ```
 
-app.js
+test.js
 ```js
 const flush = require('flush-cache')
 
@@ -26,6 +40,9 @@ flush()
 // completely uncached & fresh object here:
 require('./something') // such logs, much wows!
 ```
+
+flush-cache deletes every require cache object, so when you require modules
+recursively, their cache gets flushed too.
 
 ## examples
 ### mocha
