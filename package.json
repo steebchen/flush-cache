@@ -1,6 +1,6 @@
 {
   "name": "flush-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flushes the internal node cache, useful (and recommended) when testing apps",
   "main": "index.js",
   "engines": {
