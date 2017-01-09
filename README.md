@@ -69,3 +69,11 @@ test('first', t => {
   // t.context.myObject is now a fresh object in every single test case!
 })
 ```
+
+## gotchas
+Most modules expect the `require` command to always be cached, so some modules
+may break. If you detect modules which break this module, create an issue or a
+PR.
+
+Current require caches which are ignored:
+- deasync
